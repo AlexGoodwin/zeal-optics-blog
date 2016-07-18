@@ -338,6 +338,7 @@
             min-height: 680px;
             max-height: 680px;
         }
+
             .grid .post-content:before {
                 content: ' ';
                 position: absolute;
@@ -353,6 +354,11 @@
             .permapage.grid .post-content{
                 max-height: none;
                 padding-bottom: 40px;
+            }
+
+            .permapage.grid .post-content:before {
+              background-image: none;
+              display: none;
             }
 
         .grid .init-posts{
@@ -695,6 +701,7 @@
                     border-color: #a52900;
                 }
 
+        /* winter imagery media queries */
         /*@media only screen and (min-width: 1400px){*/
         /*    #hero-image{*/
         /*        background-position: center bottom -100px;*/
@@ -1118,6 +1125,11 @@
                                             <a href="https://plus.google.com/share?url={URLEncodedPermalink}" target="_blank" class="icon-googleplus" aria-hidden="true" data-icon="&#x47;"></a>
                                         </div>
                                     </div>
+                                    {block:PermalinkPage}
+                                    <div class="facebookLike">
+                                        <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fzealoptics&width=51&layout=button&action=like&size=small&show_faces=false&share=false&height=65&appId=1585243755112691" width="51" height="65" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                                    </div>
+                                    {/block:PermalinkPage}
                                     <div class="date">
                                         {block:Date}
                                         <a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}, {Year}</a>
@@ -1507,11 +1519,9 @@
 
     $('body').fitVids();
 
-    /*
-        -------------
+    /*********
         Regular Posts
-        -------------
-    */
+    **********/
     $(function() {
 
         /*
